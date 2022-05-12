@@ -6,20 +6,111 @@
 
 .container {
     display: grid;
-    grid-template: 1fr 5fr / 1fr 4fr;
+    grid-template: 1fr 6fr / 1fr 5fr;
     height: 100%;
     padding-bottom: 100px;
 }
 
 .header {
     grid-column: 2 / 3;
-    padding: 20px;
+    padding: 20px 20px 20px 40px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 
     display: grid;
     grid-template: 1fr 1.5fr / 1.5fr 1fr;
 
     position: relative;
+}
+
+.header #search {
+    display: grid;
+    grid-template-columns: 1fr 12fr;
+    align-content: center;
+}
+
+#banner-mini > h4 {
+    justify-self: start;
+}
+
+#search > img {
+    justify-self: center;
+}
+
+#search-bar,
+#search-bar:focus,
+#search-bar:active {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgb(221, 221, 221);
+    padding: 5px 20px;
+}
+
+.header #banner-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr minmax(10px, 3fr);
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+#notification {
+    grid-column-start: 2;
+    justify-self: end;
+}
+
+#banner-mini #pfp,
+#banner-large #pfp,
+#banner-large #large-pfp {
+    height: 38px;
+    width: 38px;
+}
+
+#large-pfp > img {
+    object-fit: cover;
+    max-height: 200%;
+    position: relative;
+    bottom: 5px;
+    border-radius: 50%;
+    top: 2px;
+}
+
+.header #banner-large {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 40px;
+    align-content: center;
+    align-items: end;
+}
+
+#banner-large #pfp
+#banner-mini #large-pfp {
+    height: 38px;
+    width: 38px;
+}
+
+#banner-large > h2 {
+    grid-column-start: 2;
+    align-self: stretch;
+}
+
+.header #buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
+    justify-items: center;
+}
+
+#buttons button {
+    background-color: crimson;
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    font-size: medium;
+    font-weight: 500;
 }
 
 .sidebar {
@@ -144,12 +235,15 @@
     display: grid;
     gap: 20px;
     grid-template-rows: repeat(3, minmax(40px, 100px));
+
 }
 
 #entry {
     align-self: center;
     border-top: 1px solid rgb(219, 219, 219);
     padding-top: 20px;
+    position: relative;
+    top: -15px;
 }
 
 #entry:nth-child(1) {
